@@ -19,7 +19,6 @@ module.exports = {
     versionFunctions: false,
     environment: {
       STAGE: '${opt:stage, "dev"}',
-      IDENTIFIER: '${self:custom.identifier}',
     },
   },
   // serverless plugins

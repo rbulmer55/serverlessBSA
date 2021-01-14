@@ -1,6 +1,6 @@
 module.exports = {
   TestTranslation: {
-    handler: './functions/translation/translation.handler',
+    handler: './src/functions/translation/translation.handler',
     role: {
       'Fn::GetAtt': ['LambdaHandlerServiceRole', 'Arn'],
     },
