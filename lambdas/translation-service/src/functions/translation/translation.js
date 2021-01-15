@@ -1,6 +1,6 @@
 export async function handler(event) {
   return {
     statusCode: 200,
-    message: 'Hello translation lambda',
+    body: JSON.stringify({ message: 'Hello translation lambda' }),
   };
 }

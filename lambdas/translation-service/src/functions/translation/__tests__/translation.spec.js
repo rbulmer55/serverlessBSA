@@ -1,4 +1,4 @@
-import translation from '../translation';
+import { handler } from '../translation';
 
 let event;
 
@@ -8,7 +8,7 @@ beforeEach(() => {
 
 describe('translation handler', () => {
   it('should return with status code 200', async () => {
-    const result = await translation(event);
+    const result = await handler(event);
     expect(result.statusCode).toEqual(200);
   });
 });

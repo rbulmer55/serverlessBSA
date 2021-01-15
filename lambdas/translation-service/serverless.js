@@ -20,6 +20,8 @@ module.exports = {
     environment: {
       STAGE: '${opt:stage, "dev"}',
     },
+    //api-gateway endpoint type
+    endpoint: 'regional',
   },
   // serverless plugins
   plugins: [
