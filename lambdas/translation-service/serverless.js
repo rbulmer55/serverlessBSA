@@ -22,7 +22,10 @@ module.exports = {
     },
   },
   // serverless plugins
-  plugins: ['serverless-bundle'],
+  plugins: [
+    //'serverless-bundle'
+    'serverless-esbuild',
+  ],
   functions: {
     // lambda function configurations
     ...lambdas,
@@ -31,9 +34,14 @@ module.exports = {
     // custom default variables
     prefix: '${self:service}',
     // serverless bundle config
-    bundle: {
-      caching: true,
-      sourcemaps: false,
+    // bundle: {
+    //   caching: true,
+    //   sourcemaps: false,
+    // },
+    // serverless esbuild config
+    esbuild: {
+      bundle: true,
+      minify: false,
     },
   },
   resources: {
