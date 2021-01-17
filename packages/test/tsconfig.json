@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "lib": ["es2017"],
+      "outDir": "./lib"
+    },
+    "exclude": ["**/__tests__/*"],
+    "include": ["./src"]
+  }
+  
