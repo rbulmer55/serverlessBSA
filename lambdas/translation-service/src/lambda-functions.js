@@ -1,6 +1,7 @@
 module.exports = {
   TestTranslation: {
-    handler: 'src/functions/translation/translation.handler',
+    handler:
+      'lambdas/translation-service/src/functions/translation/translation.handler',
     role: {
       'Fn::GetAtt': ['LambdaHandlerServiceRole', 'Arn'],
     },
@@ -11,7 +12,7 @@ module.exports = {
       {
         http: {
           path: 'translation/translate/',
-          method: 'get',
+          method: 'post',
           // authorizer: {
           //   name: 'Authoriser',
           //   identitySource: 'method.request.header.Authorization',

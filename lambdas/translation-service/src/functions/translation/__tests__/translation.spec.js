@@ -3,7 +3,7 @@ import { handler } from '../translation';
 let event;
 
 beforeEach(() => {
-  event = {};
+  event = {data:'<test><test>'};
 });
 
 describe('translation handler', () => {

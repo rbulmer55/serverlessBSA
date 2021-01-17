@@ -1,10 +1,8 @@
-const lambdas = require('./src/lambda-functions');
-const resources = require('./src/resources');
+const tsLambdas = require('./lambdas/translation-service/src/lambda-functions');
+const tsResources = require('./lambdas/translation-service/src/resources');
 
 module.exports = {
-  service: {
-    name: 'serverless-bsa-lambdas',
-  },
+  service: 'serverless-bsa-lambdas',
   package: {
     individually: true,
     // excludeDevDependencies: false,
@@ -21,35 +19,38 @@ module.exports = {
       STAGE: '${opt:stage, "dev"}',
     },
     //api-gateway endpoint type
-    endpoint: 'regional',
+    apiGateway: {
+      shouldStartNameWithService: true,
+      endpoint: 'regional',
+    },
   },
   // serverless plugins
   plugins: [
-    //'serverless-bundle'
-    'serverless-esbuild',
+    'serverless-bundle',
+    //'serverless-esbuild',
   ],
   functions: {
     // lambda function configurations
-    ...lambdas,
+    ...tsLambdas,
   },
   custom: {
     // custom default variables
     prefix: '${self:service}',
     // serverless bundle config
-    // bundle: {
-    //   caching: true,
-    //   sourcemaps: false,
-    // },
-    // serverless esbuild config
-    esbuild: {
-      bundle: true,
-      minify: false,
+    bundle: {
+      caching: true,
+      sourcemaps: false,
     },
+    // serverless esbuild config
+    // esbuild: {
+    //   bundle: true,
+    //   minify: false,
+    // },
   },
   resources: {
     // additional resource properties
     Resources: {
-      ...resources,
+      ...tsResources,
     },
   },
 };
