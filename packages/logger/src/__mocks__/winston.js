@@ -8,6 +8,14 @@ export const createLogger = jest.fn().mockImplementation(() => {
   return Logger;
 });
 
+export const transports = {
+  Console: jest.fn().mockImplementation(() => {
+    return {
+      Console: jest.fn(),
+    };
+  }),
+};
+
 const colorize = jest.fn();
 const simple = jest.fn();
 const timestamp = jest.fn();

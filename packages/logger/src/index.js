@@ -1,11 +1,22 @@
-import { createLogger, format } from 'winston';
+import { createLogger, format, transports } from 'winston';
 
 let winstonLogger = null;
 
-export function initLogger(
-  service,
-  level = 'info'
-) {
+export function initLogger(service, level = 'info', additionalTransports = []) {
+  let transport = [
+    new transports.Console({
+      format: format.combine(
+        format.timestamp(),
+        format.simple(),
+        format.colorize()
+      ),
+    }),
+  ];
+
+  if (additionalTransports.length) {
+    transport = transport.concat(additionalTransports);
+  }
+
   if (!winstonLogger) {
     winstonLogger = createLogger({
       level,
@@ -15,6 +26,7 @@ export function initLogger(
         format.json()
       ),
       defaultMeta: { service },
+      transports: transport,
     });
   }
 
