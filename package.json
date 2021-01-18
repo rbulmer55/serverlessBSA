@@ -46,7 +46,6 @@
     "@babel/preset-typescript": "^7.12.7",
     "@bsa/logger": "file:packages/logger",
     "@bsa/test": "file:packages/test",
-    "typescript": "^4.1.3",
     "xml2js": "^0.4.23"
   }
 }
