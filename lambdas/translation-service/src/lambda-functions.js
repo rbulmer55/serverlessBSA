@@ -19,13 +19,17 @@ module.exports = {
           //   type: 'token',
           //   resultTtlInSeconds: 30,
           // },
-          // request: {
-          //   parameters: {
-          //     headers: {
-          //       Authorization: true,
-          //     },
-          //   },
-          // },
+          request: {
+            //   parameters: {
+            //     headers: {
+            //       Authorization: true,
+            //     },
+            //   },
+            // schema: {
+            //   'application/json':
+            //     '${file(lambdas/translation-service/src/functions/translation/validation/translation-schema.json)}',
+            // },
+          },
         },
       },
     ],
