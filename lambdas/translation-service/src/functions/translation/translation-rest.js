@@ -1,5 +1,7 @@
 import { translation } from './translation';
 import { initLogger, logger } from '@bsa/logger';
+import { validate } from '@bsa/schema-validator';
+import { schema } from './validation/ajv-translation-schema';
 
 export async function translationRest(event) {
   try {
@@ -11,6 +13,8 @@ export async function translationRest(event) {
     } = event;
 
     const payloadBody = JSON.parse(body);
+
+    validate(schema, payloadBody);
 
     const payload = {
       ...payloadBody,

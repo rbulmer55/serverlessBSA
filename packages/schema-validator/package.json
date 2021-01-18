@@ -1,0 +1,43 @@
+{
+  "name": "@bsa/schema-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bsa/errors": "file:../errors",
+    "ajv": "^7.0.3",
+    "ajv-errors": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "babel": "^6.23.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "lib"
+    ],
+    "collectCoverageFrom": [
+      "**/src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ],
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  }
+}
