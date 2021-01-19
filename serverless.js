@@ -1,6 +1,8 @@
 const tsLambdas = require('./lambdas/translation-service/src/lambda-functions');
 const tsResources = require('./lambdas/translation-service/src/resources');
 
+const authLambdas = require('./lambdas/auth-service/src/lambda-functions');
+
 module.exports = {
   service: 'serverless-bsa-lambdas',
   package: {
@@ -32,6 +34,7 @@ module.exports = {
   functions: {
     // lambda function configurations
     ...tsLambdas,
+    ...authLambdas,
   },
   custom: {
     // custom default variables

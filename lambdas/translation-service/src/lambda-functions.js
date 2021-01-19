@@ -13,18 +13,18 @@ module.exports = {
         http: {
           path: 'translation/translate/',
           method: 'post',
-          // authorizer: {
-          //   name: 'Authoriser',
-          //   identitySource: 'method.request.header.Authorization',
-          //   type: 'token',
-          //   resultTtlInSeconds: 30,
-          // },
+          authorizer: {
+            name: 'LambdaAuthoriser',
+            identitySource: 'method.request.header.Authorization',
+            type: 'token',
+            resultTtlInSeconds: 30,
+          },
           request: {
-            //   parameters: {
-            //     headers: {
-            //       Authorization: true,
-            //     },
-            //   },
+            parameters: {
+              headers: {
+                Authorization: true,
+              },
+            },
             // schema: {
             //   'application/json':
             //     '${file(lambdas/translation-service/src/functions/translation/validation/translation-schema.json)}',

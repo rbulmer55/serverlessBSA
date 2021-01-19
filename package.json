@@ -17,19 +17,18 @@
   },
   "homepage": "https://github.com/rbulmer55/serverlessBSA#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.21",
-    "@typescript-eslint/eslint-plugin": "^4.13.0",
-    "@typescript-eslint/parser": "^4.13.0",
     "aws-sdk": "^2.827.0",
+    "babel": "^6.23.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
+    "mockdate": "^3.0.2",
     "prettier": "^2.2.1",
-    "serverless": "^1.58.0",
+    "serverless": "^2.19.0",
     "serverless-bundle": "^4.2.0",
     "serverless-esbuild": "^1.7.0"
   },
@@ -42,9 +41,9 @@
     ]
   },
   "dependencies": {
-    "@babel/preset-typescript": "^7.12.7",
     "@bsa/logger": "file:packages/logger",
     "@bsa/schema-validator": "file:packages/schema-validator",
+    "jsonwebtoken": "^8.5.1",
     "xml2js": "^0.4.23"
   }
 }
